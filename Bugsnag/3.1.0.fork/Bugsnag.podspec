@@ -77,7 +77,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/segmentio/bugsnag-cocoa.git", :tag => "3.1.0.fork" }
   s.source_files = ['bugsnag/*.{h,m}']
   s.requires_arc = true
-  s.dependency "Reachability"
   s.frameworks = "SystemConfiguration"
 
   s.ios.source_files = "bugsnag/iOS/*.{h,m}"
