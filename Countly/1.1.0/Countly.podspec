@@ -50,6 +50,7 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/segmentio/countly-sdk-ios.git', :tag => '1.1.0' }
   s.source_files = '*.{h,m}'
   s.resources    = 'Countly.xcdatamodeld'
+  s.preserve_paths = 'Countly.xcdatamodeld'
   s.requires_arc = false
   s.platform     = :ios, '4.3'
   s.frameworks   = 'CoreTelephony', 'CoreData'
