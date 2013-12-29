@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Countly'
-  s.version  = '1.1.0'
+  s.version  = '1.1.0.fork'
   s.license  = {
     :type => 'COMMUNITY',
     :text => <<-LICENSE
@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Countly is an innovative, real-time, open source mobile analytics application.'
   s.homepage = 'https://github.com/segmentio/countly-sdk-ios'
   s.author   = {'Countly' => 'hello@count.ly'}
-  s.source   = { :git => 'https://github.com/segmentio/countly-sdk-ios.git', :tag => '1.1.0' }
+  s.source   = { :git => 'https://github.com/segmentio/countly-sdk-ios.git', :tag => '1.1.0.fork' }
   s.source_files    = '*.{h,m}'
   s.preserve_paths  = 'Countly.xcdatamodeld'
   s.resource_bundle = { 'Countly' => 'Countly.xcdatamodeld' }
