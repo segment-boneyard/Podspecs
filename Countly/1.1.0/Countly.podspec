@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'Countly'
   s.version  = '1.1.0'
-  s.license      = {
+  s.license  = {
     :type => 'COMMUNITY',
     :text => <<-LICENSE
               COUNTLY MOBILE ANALYTICS COMMUNITY EDITION LICENSE
@@ -46,11 +46,11 @@ Pod::Spec.new do |s|
   }
   s.summary  = 'Countly is an innovative, real-time, open source mobile analytics application.'
   s.homepage = 'https://github.com/segmentio/countly-sdk-ios'
-  s.author  = {'Countly' => 'hello@count.ly'}
+  s.author   = {'Countly' => 'hello@count.ly'}
   s.source   = { :git => 'https://github.com/segmentio/countly-sdk-ios.git', :tag => '1.1.0' }
   s.source_files = '*.{h,m}'
-  s.resources = 'Countly.xcdatamodeld'
+  s.resources    = 'Countly.xcdatamodeld'
   s.requires_arc = false
   s.platform     = :ios, '4.3'
-  s.framework = 'CoreTelephony'
+  s.frameworks   = 'CoreTelephony', 'CoreData'
 end
