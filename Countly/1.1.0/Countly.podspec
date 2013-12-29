@@ -48,22 +48,15 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/segmentio/countly-sdk-ios'
   s.author   = {'Countly' => 'hello@count.ly'}
   s.source   = { :git => 'https://github.com/segmentio/countly-sdk-ios.git', :tag => '1.1.0' }
-  s.source_files = '*.{h,m}'
-  s.resources    = 'Countly.xcdatamodeld'
-  s.preserve_paths = 'Countly.xcdatamodeld'
-  s.requires_arc = false
-  s.platform     = :ios, '4.3'
-  s.frameworks   = 'CoreTelephony', 'CoreData'
+  s.source_files    = '*.{h,m}'
+  s.preserve_paths  = 'Countly.xcdatamodeld'
+  s.resource_bundle = { 'Countly' => 'Countly.xcdatamodeld' }
+  s.requires_arc    = false
+  s.platform        = :ios, '4.3'
+  s.frameworks      = 'CoreTelephony', 'CoreData'
 
-  def s.post_install(target_installer)
-    momd_relative = 'Countly/Countly.momd'
-    momd_full = config.project_pods_root + momd_relative
-    puts "\nCompiling Core Data model\n".yellow if config.verbose?
-    model = config.project_pods_root + 'Countly/Countly.xcdatamodeld'
-    command = "xcrun momc '#{model}' '#{momd_full}'"
-    command << " 2>&1 > /dev/null" unless config.verbose?
-    unless system(command)
-      raise ::Pod::Informative, "Failed to compile Core Data model"
-    end
-  end
+  s.prepare_command = <<-CMD
+    x=$(pwd)
+    xcrun momc 'Countly.xcdatamodeld' "$x/Countly.momd"
+  CMD
 end
