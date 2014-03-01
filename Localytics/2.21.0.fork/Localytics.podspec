@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Localytics"
-  s.version      = "2.21.0"
+  s.version      = "2.21.0.fork"
   s.summary      = "Localytics iOS SDK"
   s.description  = "Localytics analytics and marketing platform"
   s.homepage     = "http://www.localytics.com"
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.1.1'
 
   s.source_files = '*.h'
-  s.preserve_paths = 'libLocalyticsAMP.a'
+  s.preserve_paths = 'libLocalyticsAMP_x64.a'
   s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/Localytics-AMP"' }
 
   s.weak_frameworks = 'AdSupport'
